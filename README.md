@@ -57,7 +57,7 @@ If you wanna understand how I strucutred the engine I would suggest you start in
 Also intresting to see is how we handle the States. For that we have the [state.h](src/state.h) file. Via that we have globally access
 to our states and header files.
 
-For the Math behind the simulation have a look at the [Math.pdf](Math.md) file.
+For the Math behind the simulation have a look at the [Math](Math.pdf) file.
 
 ## Future improvements
 
