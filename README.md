@@ -93,7 +93,7 @@ $$
 
 To determine if a collision occurs, we compare the distance to the scaled sum of their radii:
 
-_(We added a ***collision_radius_scale*** to make the collision detection more responsive. If we wouldn't have this the particles would react later than I wont them to)_
+_(We added a ***collision_radius_scale*** to make the collision detection more responsive. If we wouldn't have this, the particles would react later than I want them to)_
 
 $$
 \text{collision\_distance} = (r_i + r_j) \cdot \text{collision\_radius\_scale}
@@ -219,7 +219,7 @@ When two particles collide, we need to resolve their positions and velocities. T
    \mathbf{v}_2 = \mathbf{v}_{2, \text{normal}}^{\text{new}} \cdot \mathbf{n} + v_{2, \text{tangent}} \cdot \mathbf{t}
    $$
 
-By following these steps, we ensure that particles respond appropriately to collisions while conserving momentum and energy according to the principles of physics.
+   By following these steps, we ensure that particles respond appropriately to collisions while conserving momentum and energy according to the principles of physics.
 
 ## Future improvements
 
