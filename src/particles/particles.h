@@ -2,8 +2,10 @@
 #define PARTICLES_H
 
 #define GRAVITY 0.09f
-#define COEFFICIENT_OF_RESTITUTION 0.95f 
-#define PARTICLE_COUNT 100
+#define COEFFICIENT_OF_RESTITUTION 0.8f 
+
+#define PARTICLE_COUNT 5
+#define RADIUS 15.0f
 
 #include <stdbool.h>
 

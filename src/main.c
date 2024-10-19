@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -10,8 +11,8 @@ struct State state;
 
 void init() {
     srand(time(NULL));
-    init_renderer();
     init_particles();
+    init_renderer();
 }
 
 void destroy() {
@@ -21,8 +22,15 @@ void destroy() {
 
 void update() {
     printf("Frames: %llu\n", window.fps);
-    update_particles();
-    did_particles_collide();
+    if (!state.window->keyboard.keys[GLFW_KEY_SPACE].down) {
+        update_particles();
+        did_particles_collide();
+    }
+    if (state.window->keyboard.keys[GLFW_KEY_R].down) {
+        destroy_particles();
+        init_particles();
+    }
+    
 }
 
 void render_() {

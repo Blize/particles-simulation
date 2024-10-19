@@ -10,7 +10,7 @@ void init_particles() {
     state.particle_count = PARTICLE_COUNT;
     state.particles = (struct Particle*)malloc(sizeof(struct Particle) * PARTICLE_COUNT);
 
-    float radius = 15.0f;
+    float radius = RADIUS;
     float spacing_x = 15.0f;  // Horizontal
     float spacing_y = 50.0f;  // Vertical
 
@@ -114,7 +114,7 @@ void handle_particle_collision(struct Particle *p1, struct Particle *p2, float d
 
 /// If r1 + r2 >= distance between particles, then particles have collided
 void did_particles_collide() {
-    float collision_radius_scale = 1.5f; 
+    float collision_radius_scale = 1.2f; 
 
     for (int i = 0; i < state.particle_count; i++) {
         if (state.particles[i].active) {
@@ -146,5 +146,3 @@ void update_particles() {
         }
     }
 }
-
-
