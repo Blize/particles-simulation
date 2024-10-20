@@ -2,9 +2,9 @@
 #include "../state.h"
 #include <math.h>
 
-void draw_circle(float cx, float cy, float r, int num_segments) {
+void draw_circle(float cx, float cy, float r, int num_segments, vec3 color) {
 
-    glColor3f(1.0f, 1.0f, 1.0f); 
+    glColor3f(color.x, color.y, color.z); 
     float aspect_ratio = (float)state.window->width / (float)state.window->height;
     float adjusted_radius = r * aspect_ratio; 
 

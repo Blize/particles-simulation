@@ -3,11 +3,14 @@
 
 #include "gfx/window.h"
 #include "gfx/render.h"
+#include "util/util.h"
 
 struct Particle {
   vec2 position;
   vec2 velocity;
   float radius;
+  // color based on velocity
+  vec3 color;
   bool active;
 };
 

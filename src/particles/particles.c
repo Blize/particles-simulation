@@ -11,8 +11,8 @@ void init_particles() {
     state.particles = (struct Particle*)malloc(sizeof(struct Particle) * PARTICLE_COUNT);
 
     float radius = RADIUS;
-    float spacing_x = 15.0f;  // Horizontal
-    float spacing_y = 50.0f;  // Vertical
+    float spacing_x = 1.0f;  // Horizontal
+    float spacing_y = 3.0f;  // Vertical
 
     int num_columns = ceil(sqrt(PARTICLE_COUNT)); 
     int num_rows = ceil((float)PARTICLE_COUNT / num_columns);
@@ -141,8 +141,23 @@ void did_particles_collide() {
 void update_particles() {
     for (int i = 0; i < state.particle_count; i++) {
         if (state.particles[i].active) {
+
+            vec2 velocity = state.particles[i].velocity;
+            float speed = sqrtf(velocity.x * velocity.x + velocity.y * velocity.y);
+
+            float max_speed = 10.0f;
+            float normalized_speed = clamp(speed / max_speed, 0.0f, 1.0f);
+
+            // Interpolate between blue (slow) and red (fast)
+            state.particles[i].color = (vec3){
+                normalized_speed,               // Red component increases with speed
+                0.0f,                           // No green component
+                1.0f - normalized_speed         // Blue component decreases with speed
+            };
+
             state.particles[i].velocity.y -= GRAVITY; 
             state.particles[i].position = vec2_add(state.particles[i].position, state.particles[i].velocity);
         }
     }
 }
+

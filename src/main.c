@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -37,7 +36,7 @@ void render_() {
     glClear(GL_COLOR_BUFFER_BIT);
     for (int i = 0; i < state.particle_count; i++) {
         if (state.particles[i].active) {
-            state.render->draw_circle(state.particles[i].position.x, state.particles[i].position.y, state.particles[i].radius, 100);
+            state.render->draw_circle(state.particles[i].position.x, state.particles[i].position.y, state.particles[i].radius, 100, state.particles[i].color);
         }
     }
 }

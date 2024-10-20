@@ -2,10 +2,11 @@
 #define RENDER_H
 
 #include <stdbool.h>
+#include "../util/util.h"
 
 typedef void (*FDraw)();
 
-typedef void (*FDrawCircle)(float cx, float cy, float r, int num_segments);
+typedef void (*FDrawCircle)(float cx, float cy, float r, int num_segments, vec3 color);
 typedef void (*FDrawRect)(float x, float y, float w, float h);
 
 enum CameraType {
