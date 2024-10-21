@@ -95,9 +95,11 @@ void window_create(FWindow init, FWindow destroy, FWindow tick, FWindow update, 
         return;
     }
   
-    window.width = 1200; 
-    window.height = 1000;
+    window.width = 800; 
+    window.height = 640;
     window.handle = glfwCreateWindow(window.width, window.height, "Engine", NULL, NULL);
+    glfwGetFramebufferSize(window.handle, &window.width, &window.height);
+    glViewport(0, 0, window.width, window.height);
     
     if (!window.handle) {
         printf("Failed to create GLFW window\n");

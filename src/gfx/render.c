@@ -11,7 +11,11 @@ void init_renderer() {
     render.draw_rect = draw_rect;
     render.camera_type = CAMERA_2D;
 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    // glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // black
+    // glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // white
+    // glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // green
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0f); // gray
+                                          
     glViewport(0, 0, state.window->width, state.window->height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
